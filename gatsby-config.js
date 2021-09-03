@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "neu_blockchain",
+    title: "NEU Blockchain",
+    description: "Blockchain for the future"
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
