@@ -2,9 +2,9 @@ import * as React from "react"
 import Layout from "../components/Layout"
 
 import { Typography } from "@material-ui/core"
-import Card from "@material-ui/core/Card"
 import Grid from "@material-ui/core/Grid"
 
+import CardWithContent from "../components/CardWithContent"
 
 const EventsPage = () => {
   return (
@@ -15,11 +15,9 @@ const EventsPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-       <Card className="card" variant="outlined"  component="h2">
-           <Typography variant="h5">
-                There's nothing here...
-            </Typography>
-       </Card>
+            <CardWithContent title={"There's nothing here..."} body={""}>
+            </CardWithContent>
+      
       </Grid>
     </Layout>
   )

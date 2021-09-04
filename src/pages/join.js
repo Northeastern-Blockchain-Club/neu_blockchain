@@ -3,6 +3,9 @@ import Layout from "../components/Layout"
 
 import { Typography } from "@material-ui/core"
 import Grid from "@material-ui/core/Grid"
+
+import CardWithContent from "../components/CardWithContent"
+
 const JoinPage = () => {
   return (
     <Layout>
@@ -12,7 +15,8 @@ const JoinPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-       <Typography variant="h4"> There's nothing here... </Typography>
+        <CardWithContent title={"There's nothing here..."} body={""}>
+        </CardWithContent>
       </Grid>
     </Layout>
   )

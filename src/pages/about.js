@@ -3,6 +3,10 @@ import Layout from "../components/Layout"
 
 import { Typography } from "@material-ui/core"
 import Grid from "@material-ui/core/Grid"
+
+import CardWithContent from "../components/CardWithContent"
+
+
 const AboutPage = () => {
   return (
     <Layout>
@@ -12,7 +16,8 @@ const AboutPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-       
+        <CardWithContent title={"There's nothing here..."} body={""}>
+        </CardWithContent>
       </Grid>
     </Layout>
   )

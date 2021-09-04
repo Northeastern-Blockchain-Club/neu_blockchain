@@ -3,6 +3,10 @@ import Layout from "../components/Layout"
 
 import { Typography } from "@material-ui/core"
 import Grid from "@material-ui/core/Grid"
+
+import CardWithContent from "../components/CardWithContent"
+
+
 const ContactPage = () => {
   return (
     <Layout>
