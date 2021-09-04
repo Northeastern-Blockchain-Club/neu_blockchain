@@ -20,6 +20,7 @@ import "@fontsource/roboto"
 const pageStyles = {
     color: "#232129",
     padding: "20px 10px",
+    minHeight: "100%",
 }
 
 const Layout = ({ children }) => {
