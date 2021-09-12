@@ -1,25 +1,18 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 
-import { Typography } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
+import ContactCard from "../components/ContactCard";
 
-import CardWithContent from "../components/CardWithContent";
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
 const ContactPage = () => {
   return (
     <Layout>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <CardWithContent
-          title={"There's nothing here..."}
-          body={""}
-        ></CardWithContent>
-      </Grid>
+      <ContactCard />
     </Layout>
   );
 };
