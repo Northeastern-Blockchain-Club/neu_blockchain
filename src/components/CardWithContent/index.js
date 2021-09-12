@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Typography } from "@material-ui/core";
 
-// import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
@@ -21,43 +21,32 @@ const CardWithContent = ({ title, body, date, time, where, link, share }) => {
     <>
       <Card className="card" variant="outlined">
         <CardContent>
-          <Typography
-            variant="h5"
-            color="text-secondary"
-            className="text-center"
-          >
-            {title}
-          </Typography>
+          <Grid item xs={12}>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h2"
+              color="text-secondary"
+            >
+              {title}
+            </Typography>
+          </Grid>
           <Typography variant="body2" component="p">
             {body}
           </Typography>
+          <Typography variant="body1" component="p">
+            <b> When: </b> <br />
+            {date} • {time} ET
+          </Typography>
 
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            spacing={3}
-          >
-            <Grid item xs={6} className="center-text">
-              <Typography variant="body1" component="p">
-                {time} ET
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" component="p">
-                {date}
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body1" component="p">
-                {where}
-              </Typography>
-            </Grid>
-          </Grid>
+          <Typography variant="body1" component="p">
+            <b> Where: </b> <br />
+            {where}
+          </Typography>
         </CardContent>
+
         <CardActions>
-          {/* <Button size="small"> Learn More </Button> */}
+          <Button size="small"> Learn More </Button>
           <IconButton
             aria-label="share"
             disabled={isSharable}
