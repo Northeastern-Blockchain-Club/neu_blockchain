@@ -1,20 +1,43 @@
-html{
-    background-color: #eeeeee;
-    font-family: "Roboto, sans-serif, serif";
-    min-height: 100vh;
+// This is Sass for multiple pages, or general rules
+// where dictating them in layout just wouldn't be enough.
+
+html {
+  background-color: #eeeeee;
+  font-family: "Roboto, sans-serif, serif";
+  min-height: 100vh;
 }
 
-body{
-    margin: 0px;
-    min-height: 100vh;
+body {
+  margin: 0px;
+  min-height: 100vh;
+  color: #444;
+  background-color: #eeeeee;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.h-main{
+.center-text {
+  text-align: center;
 }
 
+.full-page {
+  min-height: 90vh;
+}
+
+.three-quarter-page {
+  min-height: 60vh;
+}
+
+.bg-white {
+  //   background-color: white;
+  min-height: 200px;
+}
+
+.header-text {
+  margin: 20px;
+  padding: 20px;
+}
