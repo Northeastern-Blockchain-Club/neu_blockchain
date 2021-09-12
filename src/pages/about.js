@@ -1,26 +1,20 @@
-import * as React from "react"
-import Layout from "../components/Layout"
+import * as React from "react";
+import Layout from "../components/Layout";
 
-import { Typography } from "@material-ui/core"
-import Grid from "@material-ui/core/Grid"
-
-import CardWithContent from "../components/CardWithContent"
-
+import { Typography } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 const AboutPage = () => {
   return (
     <Layout>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-        <CardWithContent title={"There's nothing here..."} body={""}>
-        </CardWithContent>
-      </Grid>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      ></Grid>
     </Layout>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
