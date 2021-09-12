@@ -1,25 +1,34 @@
-import * as React from "react"
-import Layout from "../components/Layout"
+import * as React from "react";
+import Layout from "../components/Layout";
 
-import { Typography } from "@material-ui/core"
-import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { Typography } from "@material-ui/core";
 
-import CardWithContent from "../components/CardWithContent"
+import CardWithContent from "../components/CardWithContent";
 
 const JoinPage = () => {
   return (
     <Layout>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        className="full-page"
+      >
+        <Typography variant="h4"> Get Involved </Typography>
+        <Button
+          variant="outlined"
+          color="primary"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe7hX7MGJ7ShZSe2ZhuIajLmXBfiFseyKC28oGxMATNM_bkYw/viewform"
         >
-        <CardWithContent title={"There's nothing here..."} body={""}>
-        </CardWithContent>
+          {" "}
+          Join the Mailing List{" "}
+        </Button>
       </Grid>
     </Layout>
-  )
-}
+  );
+};
 
-export default JoinPage
+export default JoinPage;
