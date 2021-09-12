@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 
+import { navigate } from "gatsby-link";
+
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
@@ -17,20 +19,25 @@ const encode = (data) => {
 };
 
 const ContactCard = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [state, setState] = React.useState({});
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
     fetch("/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: encode({ "form-name": "contact", ...this.state }),
-    }).catch((error) => alert(error));
-
-    e.preventDefault();
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
   };
 
   return (
@@ -49,9 +56,12 @@ const ContactCard = () => {
           <form
             name="contact"
             method="post"
+            action="/"
             data-netlify="true"
-            netlify-honeypot="bot-field"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
           >
+            <input type="hidden" name="form-name" value="contact" />
             <Grid container direction="row" alignItems="center">
               <input type="hidden" name="bot-field" />
               <Grid item xs={12}>
@@ -59,26 +69,22 @@ const ContactCard = () => {
                   placeholder="Name"
                   name="name"
                   type="name"
-                  fullWidth
                   id="form-input-control-name"
                   color="primary"
                   width={16}
                   className="contact-field"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={handleChange}
                 ></TextField>
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   placeholder="Email"
                   name="email"
-                  fullWidth
                   type="email"
                   id="form-input-control-email"
                   width={16}
                   className="contact-field"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleChange}
                 />
               </Grid>
 
@@ -88,13 +94,12 @@ const ContactCard = () => {
                   name="message"
                   id="form-input-control-message"
                   type="text"
-                  fullWidth
                   maxRows="10"
                   multiline
                   width={16}
+                  rows={4}
                   className="contact-field"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={handleChange}
                 />
               </Grid>
               <Button

@@ -75,6 +75,7 @@ const IndexPage = () => {
           </Typography>
         </Container>
       </div>
+      <br />
     </Layout>
   );
   // add icons
