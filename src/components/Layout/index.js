@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 
 // imported 3rd party libraries
 import { Helmet } from "react-helmet";
