@@ -2,11 +2,19 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "NEU Blockchain",
-    description: "Blockchain for the future"
+    description: "Blockchain for the future",
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     "gatsby-plugin-image",
     // {
     //   resolve: "gatsby-plugin-google-analytics",
@@ -14,12 +22,24 @@ module.exports = {
     //     trackingId: "",
     //   },
     // },
+    "gatsby-transformer-json",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `roboto`,
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/android-chrome-512x512.png",
       },
     },
     "gatsby-transformer-remark",
