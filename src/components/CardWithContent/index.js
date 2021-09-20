@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Typography } from "@material-ui/core";
 
+import { DateTime } from "luxon";
+
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,10 +15,13 @@ import ShareIcon from "@material-ui/icons/Share";
 
 import "./index.scss";
 
-const CardWithContent = ({ title, body, date, time, where, link, share }) => {
+const CardWithContent = ({ title, body, date, where, link, share }) => {
   // share is either a string url or a null.
   const isSharable = !share;
-
+  const formattedDate = DateTime
+    .fromISO(date)
+    .setZone()
+    .toLocaleString(DateTime.DATETIME_MED);
   return (
     <>
       <Card className="card" variant="outlined">
@@ -34,11 +39,11 @@ const CardWithContent = ({ title, body, date, time, where, link, share }) => {
           </Grid>
           <hr />
           <br />
-          <Typography variant="body2" component="p">
+          <Typography variant="h6" component="p">
             {body}
           </Typography>
           <Typography variant="body1" component="p">
-            {date} • {time} ET
+            {formattedDate}
           </Typography>
           <br />
           <Typography variant="body1" component="p">
