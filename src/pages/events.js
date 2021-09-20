@@ -7,20 +7,21 @@ import Grid from "@material-ui/core/Grid";
 import CardWithContent from "../components/CardWithContent";
 
 // this is where json data for each event is pulled from.
-import JSONData from "../data/events/events.json";
+import upcoming from "../data/events/upcoming.json";
+import previous from "../data/events/previous.json";
 
-const EventCard = () => (
+const EventCard = ({ data }) => (
   <>
-    {JSONData.map((data) => {
+    {data.map((d) => {
       return (
         <>
           <CardWithContent
-            title={data.title}
-            body={data.body}
-            date={data.date}
-            time={data.time}
-            where={data.where}
-            share={data.share}
+            title={d.title}
+            body={d.body}
+            date={d.date}
+            time={d.time}
+            where={d.where}
+            share={d.share}
           />
           <br />
         </>
@@ -42,7 +43,19 @@ const EventsPage = () => {
           {" "}
           Upcoming Events
         </Typography>
-        <EventCard />
+        <EventCard data={upcoming} />
+      </Grid>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4" className="header-text">
+          {" "}
+          Previous Events
+        </Typography>
+        <EventCard data={previous} />
       </Grid>
     </Layout>
   );

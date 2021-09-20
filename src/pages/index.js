@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 
-import Fade from "react-reveal/Fade";
+import Typewriter from 'typewriter-effect';
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -11,23 +11,43 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const words = ["Finance", "Security", "Voting", "IoT", "Everything "];
+const words = ["Finance.", "Security.", "Voting.", "IoT.", "...", "Everything."];
 // fades in a buzzword every sleep(x) milliseconds. Theoretically. Still some
 // bugs to work out, for the function running too fast. Ironic.
-function FadeText() {
-  let word = words[0];
-  for (let i = 0; i < words.length; i++) {
-    // await sleep(3000);
-    word = words[i];
-  }
-  return (
-    <div>
-      <div>{word}</div>
-    </div>
-  );
+
+
+const HeaderText = (alreadyVisited) => {
+  if (alreadyVisited == true)
+    return (
+      <div>Everything. </div>
+    )
+  else
+    return (
+      <Typewriter
+        onInit={(typewriter) => {
+          for (let i = 0; i < words.length; i++) {
+            if (i < words.length - 1) {
+              typewriter.typeString(words[i])
+                .pauseFor(2500)
+                .deleteAll()
+                .start()
+            }
+            else {
+              typewriter.typeString(words[i])
+                .pauseFor(2500)
+                .start()
+            }
+          }
+        }}
+      />
+    )
 }
 
 const IndexPage = () => {
+
+  const alreadyVisited = JSON.parse(localStorage.getItem('alreadyVisited'))
+  localStorage.setItem('alreadyVisited', true);
+
   return (
     <Layout>
       <Grid
@@ -44,9 +64,8 @@ const IndexPage = () => {
               className="center-text content-container-text"
             >
               The Future of{" "}
-              <Fade top opposite>
-                <FadeText />
-              </Fade>
+              <HeaderText visted={alreadyVisited} />
+
             </Typography>
           </div>
         </Grid>

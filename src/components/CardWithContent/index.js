@@ -27,26 +27,27 @@ const CardWithContent = ({ title, body, date, time, where, link, share }) => {
               variant="h5"
               component="h2"
               color="text-secondary"
+              className="bold"
             >
               {title}
             </Typography>
           </Grid>
+          <hr />
+          <br />
           <Typography variant="body2" component="p">
             {body}
           </Typography>
           <Typography variant="body1" component="p">
-            <b> When: </b> <br />
             {date} • {time} ET
           </Typography>
-
+          <br />
           <Typography variant="body1" component="p">
-            <b> Where: </b> <br />
             {where}
           </Typography>
         </CardContent>
 
-        <CardActions>
-          <Button size="small"> Learn More </Button>
+        {/* <CardActions>
+           <Button size="small"> Learn More </Button>
           <IconButton
             aria-label="share"
             disabled={isSharable}
@@ -55,8 +56,8 @@ const CardWithContent = ({ title, body, date, time, where, link, share }) => {
             }}
           >
             <ShareIcon />
-          </IconButton>
-        </CardActions>
+          </IconButton> 
+        </CardActions> */}
       </Card>
     </>
   );
