@@ -18,11 +18,19 @@ const JoinPage = () => {
         className="full-page"
       >
         <Typography variant="h4"> Get Involved </Typography>
+
+<Button
+          variant="outlined"
+          href="https://linktr.ee/NEUBlockchain"
+        >
+         
+          Our Linktree
+        </Button>
         <Button
           variant="outlined"
           href="https://docs.google.com/forms/d/e/1FAIpQLSe7hX7MGJ7ShZSe2ZhuIajLmXBfiFseyKC28oGxMATNM_bkYw/viewform"
         >
-          {" "}
+          
           Join the Mailing List{" "}
         </Button>
       </Grid>
