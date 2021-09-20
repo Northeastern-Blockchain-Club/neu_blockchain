@@ -16,10 +16,10 @@ const EventCard = ({ data }) => (
       return (
         <>
           <CardWithContent
+            key={d.title}
             title={d.title}
             body={d.body}
             date={d.date}
-            time={d.time}
             where={d.where}
             share={d.share}
           />
