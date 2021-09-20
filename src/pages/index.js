@@ -28,7 +28,7 @@ const HeaderText = (alreadyVisited) => {
           for (let i = 0; i < words.length; i++) {
             if (i < words.length - 1) {
               typewriter.typeString(words[i])
-                .pauseFor(2500)
+                .pauseFor(900)
                 .deleteAll()
                 .start()
             }
