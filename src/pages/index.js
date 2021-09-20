@@ -45,9 +45,9 @@ const HeaderText = (alreadyVisited) => {
 
 const IndexPage = () => {
 
-  const alreadyVisited = JSON.parse(localStorage.getItem('alreadyVisited'))
-  localStorage.setItem('alreadyVisited', true);
-
+  // Temporary fix while looking for workaround for gatsby builds and ssr w/
+  // localstorage issue
+  const alreadyVisited = false;
   return (
     <Layout>
       <Grid
