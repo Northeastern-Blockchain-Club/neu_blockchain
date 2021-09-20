@@ -130,7 +130,7 @@ const Header = () => {
     const largeViewport = useMediaQuery(theme.breakpoints.up("sm"));
     return (
         <header className="header">
-            <AppBar style={{ background: 'transparent', boxShadow: 'none' }}>
+            <AppBar style={{ background: 'transparent', boxShadow: 'none' }} position="sticky">
                 <Container>
                     <Toolbar>{largeViewport ? <LargeMenu /> : <MobileMenu />}</Toolbar>
                 </Container>
