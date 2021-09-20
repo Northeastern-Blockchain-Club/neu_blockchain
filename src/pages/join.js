@@ -20,7 +20,6 @@ const JoinPage = () => {
         <Typography variant="h4"> Get Involved </Typography>
         <Button
           variant="outlined"
-          color="primary"
           href="https://docs.google.com/forms/d/e/1FAIpQLSe7hX7MGJ7ShZSe2ZhuIajLmXBfiFseyKC28oGxMATNM_bkYw/viewform"
         >
           {" "}

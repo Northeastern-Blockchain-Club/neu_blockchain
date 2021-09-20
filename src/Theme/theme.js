@@ -2,12 +2,12 @@ import { createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme({
   palette: {
-    type: "light",
+    type: 'light',
     primary: {
-      main: "#f44336",
+      main: '#c0cfe0',
     },
     secondary: {
-      main: "#f50057",
+      main: '#f50057',
     },
     typography: {
       fontFamily: [
@@ -41,4 +41,5 @@ const theme = createTheme({
     },
   },
 });
+
 export default theme;
