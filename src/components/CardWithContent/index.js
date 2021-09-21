@@ -15,11 +15,18 @@ import ShareIcon from "@material-ui/icons/Share";
 
 import "./index.scss";
 
-const CardWithContent = ({ title, body, date, where, link, share }) => {
+const CardWithContent = ({
+  title,
+  body,
+  date,
+  where,
+  overview,
+  link,
+  share,
+}) => {
   // share is either a string url or a null.
   const isSharable = !share;
-  const formattedDate = DateTime
-    .fromISO(date)
+  const formattedDate = DateTime.fromISO(date)
     .setZone()
     .toLocaleString(DateTime.DATETIME_MED);
   return (
@@ -51,9 +58,17 @@ const CardWithContent = ({ title, body, date, where, link, share }) => {
           </Typography>
         </CardContent>
 
-        {/* <CardActions>
-           <Button size="small"> Learn More </Button>
-          <IconButton
+        <CardActions>
+          {console.log(overview)}
+          {overview.length > 0 ? (
+            <Button variant="outlined" size="small" href={overview}>
+              Highlights
+            </Button>
+          ) : (
+            <></>
+          )}
+
+          {/* <IconButton
             aria-label="share"
             disabled={isSharable}
             onClick={() => {
@@ -61,8 +76,8 @@ const CardWithContent = ({ title, body, date, where, link, share }) => {
             }}
           >
             <ShareIcon />
-          </IconButton> 
-        </CardActions> */}
+          </IconButton>  */}
+        </CardActions>
       </Card>
     </>
   );
