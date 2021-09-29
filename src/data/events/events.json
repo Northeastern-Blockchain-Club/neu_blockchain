@@ -36,5 +36,41 @@
         "link": null,
         "overview": "",
         "share": null
+    },
+    {
+        "title": "Boston FinTech Week",
+        "body": "",
+        "date": "2021-09-28T16:00:00",
+        "where": "Virtual",
+        "link": null,
+        "overview": "",
+        "share": null
+    },
+    {
+        "title": "Networking - Mentoring & Research",
+        "body": "",
+        "date": "2021-10-04T18:00:00",
+        "where": "458 Richards Hall",
+        "link": null,
+        "overview": "",
+        "share": null
+    },
+    {
+        "title": "Web 3.0 Workshop",
+        "body": "",
+        "date": "2021-10-14T18:00:00",
+        "where": "Virtual",
+        "link": null,
+        "overview": "",
+        "share": null
+    },
+    {
+        "title": "The Future of Crypto with Coinbase",
+        "body": "",
+        "date": "2021-10-18T18:00:00",
+        "where": "105 Shillman",
+        "link": null,
+        "overview": "",
+        "share": null
     }
 ]
