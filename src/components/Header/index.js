@@ -17,126 +17,129 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import MenuIcon from "@material-ui/icons/Menu";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
+import Img from "gatsby-image";
+import Logo from "../Logo";
 import "./index.scss";
 
 const MobileMenu = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    return (
-        <>
-            <IconButton
-                aria-controls="fade-menu"
-                aria-haspopup="true"
-                onClick={handleClick}
-            >
-                <MenuIcon fontSize="medium" />
-            </IconButton>
-            <Menu
-                id="fade-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={open}
-                onClose={handleClose}
-                TransitionComponent={Fade}
-            >
-                <MenuItem component={Link} to="/" onClick={handleClose}>
-                    Home
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <IconButton
+        aria-controls="fade-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        <MenuIcon fontSize="medium" />
+      </IconButton>
+      <Menu
+        id="fade-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        <MenuItem component={Link} to="/" onClick={handleClose}>
+          Home
         </MenuItem>
-                <MenuItem component={Link} to="/events" onClick={handleClose}>
-                    Events
+        <MenuItem component={Link} to="/events" onClick={handleClose}>
+          Events
         </MenuItem>
-                <MenuItem component={Link} to="/join" onClick={handleClose}>
-                    Join
+        <MenuItem component={Link} to="/join" onClick={handleClose}>
+          Join
         </MenuItem>
-                <MenuItem component={Link} to="/contact" onClick={handleClose}>
-                    Contact
+        <MenuItem component={Link} to="/contact" onClick={handleClose}>
+          Contact
         </MenuItem>
-            </Menu>
-            <div className="grow" />
-            <IconButton
-                edge="end"
-                aria-label="Instagram account"
-                aria-controls="primary-search-instagram"
-                aria-haspopup="true"
-                color="inherit"
-                href="https://www.instagram.com/neublockchain/"
-            >
-                <InstagramIcon fontSize="medium" />
-            </IconButton>
-            <IconButton
-                edge="end"
-                aria-label="Linkedin account"
-                aria-controls="primary-search-linkedin"
-                aria-haspopup="true"
-                color="inherit"
-                href="https://www.linkedin.com/company/neu-blockchain-org/"
-            >
-                <LinkedInIcon fontSize="medium" />
-            </IconButton>
-        </>
-    );
+      </Menu>
+      <div className="grow" />
+      <IconButton
+        edge="end"
+        aria-label="Instagram account"
+        aria-controls="primary-search-instagram"
+        aria-haspopup="true"
+        color="inherit"
+        href="https://www.instagram.com/neublockchain/"
+      >
+        <InstagramIcon fontSize="medium" />
+      </IconButton>
+      <IconButton
+        edge="end"
+        aria-label="Linkedin account"
+        aria-controls="primary-search-linkedin"
+        aria-haspopup="true"
+        color="inherit"
+        href="https://www.linkedin.com/company/neu-blockchain-org/"
+      >
+        <LinkedInIcon fontSize="medium" />
+      </IconButton>
+    </>
+  );
 };
 
 const LargeMenu = () => {
-    return (
-        <>
-            <Button color="inherit" component={Link} to="/">
-                Home
+  return (
+    <>
+      <Logo />
+      <Button color="inherit" component={Link} to="/">
+        Home
       </Button>
-            <Button color="inherit" component={Link} to="/join">
-                Join
+      <Button color="inherit" component={Link} to="/join">
+        Join
       </Button>
-            <Button color="inherit" component={Link} to="/events">
-                Events
+      <Button color="inherit" component={Link} to="/events">
+        Events
       </Button>
-            <Button color="inherit" component={Link} to="/contact">
-                Contact
+      <Button color="inherit" component={Link} to="/contact">
+        Contact
       </Button>
-            <div className="grow" />
-            <IconButton
-                edge="end"
-                aria-label="Instagram account"
-                aria-controls="primary-search-instagram"
-                aria-haspopup="true"
-                color="inherit"
-                href="https://www.instagram.com/neublockchain/"
-            >
-                <InstagramIcon fontSize="medium" />
-            </IconButton>
-            <IconButton
-                edge="end"
-                aria-label="Linkedin account"
-                aria-controls="primary-search-linkedin"
-                aria-haspopup="true"
-                color="inherit"
-                href="https://www.linkedin.com/company/neu-blockchain-org/"
-            >
-                <LinkedInIcon fontSize="medium" />
-            </IconButton>
-        </>
-    );
+      <div className="grow" />
+      <IconButton
+        edge="end"
+        aria-label="Instagram account"
+        aria-controls="primary-search-instagram"
+        aria-haspopup="true"
+        color="inherit"
+        href="https://www.instagram.com/neublockchain/"
+      >
+        <InstagramIcon fontSize="medium" />
+      </IconButton>
+      <IconButton
+        edge="end"
+        aria-label="Linkedin account"
+        aria-controls="primary-search-linkedin"
+        aria-haspopup="true"
+        color="inherit"
+        href="https://www.linkedin.com/company/neu-blockchain-org/"
+      >
+        <LinkedInIcon fontSize="medium" />
+      </IconButton>
+    </>
+  );
 };
 
 const Header = () => {
-    const theme = useTheme();
-    const largeViewport = useMediaQuery(theme.breakpoints.up("sm"));
-    return (
-        <header className="header">
-            <AppBar style={{ background: 'transparent', boxShadow: 'none' }} position="sticky">
-                <Container>
-                    <Toolbar>{largeViewport ? <LargeMenu /> : <MobileMenu />}</Toolbar>
-                </Container>
-            </AppBar>
-        </header>
-    );
+  const theme = useTheme();
+  const largeViewport = useMediaQuery(theme.breakpoints.up("sm"));
+  return (
+    <header>
+      <AppBar color="primary" style={{}} position="sticky">
+        <Container>
+          <Toolbar>{largeViewport ? <LargeMenu /> : <MobileMenu />}</Toolbar>
+        </Container>
+      </AppBar>
+    </header>
+  );
 };
 
 export default Header;
